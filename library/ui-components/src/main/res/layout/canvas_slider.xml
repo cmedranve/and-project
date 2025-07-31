@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:textAppearance="@style/canvascore_style_title"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.scotiabank.canvascore.cards.CanvasCardView
+        android:id="@+id/cv_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/CanvasMaterialComponentsTheme"
+        android:visibility="gone"
+        app:canvascore_cardType="flatSolid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slider"
+        app:layout_constraintBottom_toBottomOf="@id/slider"
+        tools:visibility="visible">
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_down"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:paddingBottom="3dp"
+            android:gravity="center"
+            android:textAppearance="@style/canvascore_style_body2_bold"
+            android:textColor="@color/canvascore_gray_550"
+            android:textSize="@dimen/canvascore_font_18"
+            android:text="@string/slider_text_button_down"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </com.scotiabank.canvascore.cards.CanvasCardView>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/canvascore_margin_6"
+        android:layout_marginEnd="@dimen/canvascore_margin_4"
+        android:layout_marginTop="@dimen/canvascore_margin_4"
+        android:theme="@style/CanvasMaterialComponentsThemeForSlider"
+        app:trackHeight="6dp"
+        app:tickVisible="false"
+        app:thumbRadius="12dp"
+        app:haloRadius="26dp"
+        app:labelBehavior="gone"
+        app:layout_constraintStart_toEndOf="@id/cv_down"
+        app:layout_constraintEnd_toStartOf="@id/cv_up"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:valueFrom="1"
+        tools:valueTo="36"
+        tools:stepSize="1"/>
+
+    <com.scotiabank.canvascore.cards.CanvasCardView
+        android:id="@+id/cv_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/CanvasMaterialComponentsTheme"
+        android:visibility="gone"
+        app:canvascore_cardType="flatSolid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slider"
+        app:layout_constraintBottom_toBottomOf="@id/slider"
+        tools:visibility="visible">
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_up"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:gravity="center"
+            android:textAppearance="@style/canvascore_style_body2_bold"
+            android:textColor="@color/canvascore_gray_550"
+            android:textSize="@dimen/canvascore_font_18"
+            android:text="@string/slider_text_button_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </com.scotiabank.canvascore.cards.CanvasCardView>
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/tv_value_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/canvascore_margin_4"
+        android:layout_marginTop="@dimen/canvascore_margin_4"
+        android:textAppearance="@style/canvascore_style_text_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_max_value_label"
+        app:layout_constraintTop_toBottomOf="@id/slider"
+        app:layout_constraintHorizontal_weight="4"
+        tools:maxLines="1"
+        tools:text="@tools:sample/lorem/random" />
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/tv_max_value_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/canvascore_margin_4"
+        android:textAppearance="@style/canvascore_style_caption_alternate"
+        android:gravity="end"
+        app:layout_constraintStart_toEndOf="@id/tv_value_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_value_label"
+        app:layout_constraintHorizontal_weight="6"
+        tools:maxLines="1"
+        tools:text="@tools:sample/lorem/random" />
+
+</merge>

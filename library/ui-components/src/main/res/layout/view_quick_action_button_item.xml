@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.scotiabank.canvascore.buttons.QuickActionButton
+        android:id="@+id/q_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:canvascore_quickActionImage="@drawable/canvascore_icon_hide"
+        tools:canvascore_quickActionText="@tools:sample/cities" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/canvascore_margin_24">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivw_walkthrough"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/canvascore_margin_24"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.scotiabank.canvascore.views.CanvasTextView
+                android:id="@+id/tvw_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/canvascore_margin_36"
+                android:focusable="true"
+                android:textAppearance="@style/canvascore_style_headline_small_black"
+                android:textSize="26sp"
+                android:lineSpacingMultiplier="1.23"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivw_walkthrough"
+                tools:text="TITULO" />
+
+            <com.scotiabank.canvascore.views.CanvasTextView
+                android:id="@+id/tvw_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/canvascore_margin_16"
+                android:textAppearance="@style/canvascore_style_body2"
+                android:lineSpacingMultiplier="1.23"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvw_title"
+                tools:text="Descripción" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

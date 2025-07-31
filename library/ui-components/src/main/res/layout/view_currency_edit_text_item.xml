@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <pe.com.scotiabank.blpm.android.ui.currencyedittext.CanvasCurrencyEditText
+        android:id="@+id/ccet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:canvascore_titleText="@tools:sample/first_names"
+        tools:canvascore_subtitleText="@tools:sample/last_names"
+        tools:canvascore_hintText="@tools:sample/cities"
+        tools:canvascore_isEnabled="true"
+        tools:canvascore_isReadOnly="false"
+        tools:canvascore_isClearEnabled="false"
+        tools:canvascore_lines="1"
+        tools:canvascore_inputType="text" />
+
+    <com.scotiabank.canvascore.inputs.InputErrorView
+        android:id="@+id/iev"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:visibility="gone" />
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/ctv_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        style="@style/canvascore_style_text_field_error"
+        android:drawablePadding="@dimen/canvascore_margin_4"
+        android:drawableStart="@drawable/canvascore_icon_caution"
+        android:visibility="gone"
+        tools:maxLines="1"
+        tools:text="@tools:sample/lorem/random"  />
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/ctv_supplementary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/canvascore_style_caption"
+        android:visibility="gone"
+        tools:maxLines="1"
+        tools:text="@tools:sample/lorem/random" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

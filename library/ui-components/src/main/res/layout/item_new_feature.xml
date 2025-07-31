@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="pe.com.scotiabank.blpm.android.ui.information.model.NewFeatureModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/canvascore_margin_5"
+        android:background="@color/canvascore_background"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="411dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@{item.itemIcon}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/txt_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/canvascore_margin_12"
+            android:contentDescription="@{@string/button_for_accessibility(item.itemTitle)}"
+            android:text="@{item.itemTitle}"
+            android:textAppearance="@style/new_features_item_title"
+            android:textSize="@dimen/canvascore_font_16"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintStart_toEndOf="@id/img_item1"
+            app:layout_constraintEnd_toStartOf="@id/iv_chevron"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/txt_item_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/canvascore_margin_12"
+            android:text="@{item.itemDescription}"
+            android:textAppearance="@style/new_features_item_description"
+            android:textSize="@dimen/canvascore_font_14"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintStart_toEndOf="@id/img_item1"
+            app:layout_constraintEnd_toStartOf="@id/iv_chevron"
+            app:layout_constraintTop_toBottomOf="@+id/txt_item_title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_chevron"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_cc_next_right_plumb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

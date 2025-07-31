@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <SurfaceView
+            android:id="@+id/camera_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/canvas_background_dark_translucent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_capture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="50dp"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_qr_camera_frame" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_lantern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/canvascore_margin_16"
+            android:layout_marginEnd="@dimen/canvascore_margin_16"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/txt_flash"
+            android:elevation="8dp"
+            app:srcCompat="@drawable/ic_flash_on_white_24dp" />
+
+    </RelativeLayout>
+
+</layout>

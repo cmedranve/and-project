@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.scotiabank.canvascore.layouts.CanvasCoreSkeletonFrameLayout
+        android:id="@+id/cc_skeleton_frame_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/CanvasMaterialComponentsTheme"
+        tools:layout_width="200dp"
+        tools:layout_height="50dp">
+
+        <com.scotiabank.canvascore.cards.CanvasSkeletonCard
+            android:id="@+id/c_skeleton_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.scotiabank.canvascore.layouts.CanvasCoreSkeletonFrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

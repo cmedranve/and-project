@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="items"
+            type="java.util.List" />
+        <variable
+            name="activity"
+            type="androidx.appcompat.app.AppCompatActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_coachmark"
+        app:layout_behavior="@string/ui_appbar_scrolling_view_behavior">
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/canvascore_brand_white"
+            android:layout_marginHorizontal="@dimen/canvascore_margin_16"
+            android:layout_marginTop="@dimen/canvascore_margin_16"
+            android:text="@string/new_features_title"
+            android:textSize="@dimen/canvascore_font_16"
+            app:canvascore_fontType="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/txt_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/canvascore_brand_white"
+            android:layout_marginHorizontal="@dimen/canvascore_margin_16"
+            android:layout_marginTop="@dimen/canvascore_margin_5"
+            android:text="@string/new_features_title"
+            android:textSize="@dimen/canvascore_font_14"
+            app:canvascore_fontType="regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/btn_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/canvascore_button_height"
+            android:layout_marginEnd="@dimen/canvascore_margin_16"
+            android:layout_marginTop="@dimen/canvascore_margin_24"
+            android:layout_marginBottom="@dimen/canvascore_margin_12"
+            android:textSize="@dimen/canvascore_font_16"
+            android:text="@string/generic_accept"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/canvascore_brand_white"
+            android:onClick="@{(view)->activity.finish()}"
+            android:background="@drawable/selector_coachmark_btn"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_main"
+            app:layout_constraintTop_toBottomOf="@+id/txt_description"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/btn_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/canvascore_margin_12"
+            android:layout_marginTop="@dimen/canvascore_margin_24"
+            android:layout_marginBottom="@dimen/canvascore_margin_12"
+            android:paddingHorizontal="@dimen/canvascore_margin_30"
+            android:paddingVertical="13dp"
+            android:background="@drawable/selector_coachmark_btn"
+            android:clickable="true"
+            android:onClick="@{(view)->activity.finish()}"
+            android:focusable="true"
+            android:textSize="@dimen/canvascore_font_16"
+            android:text="@string/generic_accept"
+            android:gravity="center"
+            android:textColor="@color/canvascore_brand_white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/btn_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_description"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

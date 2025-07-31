@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <com.scotiabank.canvascore.inputs.EditTextHelper
+        android:id="@+id/eth_text1"
+        style="@style/canvascore_style_headline_medium_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/canvascore_edittext_label"
+        android:gravity="center"
+        android:maxLength="1"
+        android:minWidth="@dimen/canvascore_margin_48"
+        android:textColor="@color/canvascore_edittext_label"
+        app:layout_constraintEnd_toStartOf="@id/eth_text2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:text="•" />
+
+    <com.scotiabank.canvascore.inputs.EditTextHelper
+        android:id="@+id/eth_text2"
+        style="@style/canvascore_style_headline_medium_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/canvascore_edittext_label"
+        android:gravity="center"
+        android:maxLength="1"
+        android:minWidth="@dimen/canvascore_margin_48"
+        android:textColor="@color/canvascore_edittext_label"
+        app:layout_constraintEnd_toStartOf="@id/eth_text3"
+        app:layout_constraintStart_toEndOf="@id/eth_text1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:text="•" />
+
+    <com.scotiabank.canvascore.inputs.EditTextHelper
+        android:id="@+id/eth_text3"
+        style="@style/canvascore_style_headline_medium_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/canvascore_edittext_label"
+        android:gravity="center"
+        android:maxLength="1"
+        android:minWidth="@dimen/canvascore_margin_48"
+        android:textColor="@color/canvascore_edittext_label"
+        app:layout_constraintEnd_toStartOf="@id/eth_text4"
+        app:layout_constraintStart_toEndOf="@id/eth_text2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:text="•" />
+
+    <com.scotiabank.canvascore.inputs.EditTextHelper
+        android:id="@+id/eth_text4"
+        style="@style/canvascore_style_headline_medium_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:backgroundTint="@color/canvascore_edittext_label"
+        android:gravity="center"
+        android:maxLength="1"
+        android:minWidth="@dimen/canvascore_margin_48"
+        android:textColor="@color/canvascore_edittext_label"
+        app:layout_constraintEnd_toStartOf="@id/eth_text5"
+        app:layout_constraintStart_toEndOf="@id/eth_text3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:text="•" />
+
+    <com.scotiabank.canvascore.inputs.EditTextHelper
+        android:id="@+id/eth_text5"
+        style="@style/canvascore_style_headline_medium_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/canvascore_edittext_label"
+        android:gravity="center"
+        android:maxLength="1"
+        android:minWidth="@dimen/canvascore_margin_48"
+        android:textColor="@color/canvascore_edittext_label"
+        app:layout_constraintEnd_toStartOf="@id/eth_text6"
+        app:layout_constraintStart_toEndOf="@id/eth_text4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:text="•" />
+
+    <com.scotiabank.canvascore.inputs.EditTextHelper
+        android:id="@+id/eth_text6"
+        style="@style/canvascore_style_headline_medium_black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/canvascore_edittext_label"
+        android:gravity="center"
+        android:maxLength="1"
+        android:minWidth="@dimen/canvascore_margin_48"
+        android:textColor="@color/canvascore_edittext_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/eth_text5"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:maxLines="1"
+        tools:text="•" />
+
+</merge>

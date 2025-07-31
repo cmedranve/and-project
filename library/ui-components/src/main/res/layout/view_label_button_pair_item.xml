@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_columns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_column1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/canvascore_margin_8"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tb_column2"
+            app:layout_constraintBaseline_toBaselineOf="@id/tb_column2"
+            tools:maxLines="4"
+            tools:text="@tools:sample/lorem/random" />
+
+        <com.scotiabank.canvascore.buttons.TextButton
+            android:id="@+id/tb_column2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_column1"
+            tools:text="@tools:sample/cities"
+            tools:drawableStart="@drawable/canvascore_icon_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

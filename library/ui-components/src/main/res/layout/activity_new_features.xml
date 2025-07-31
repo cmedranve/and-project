@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="items"
+            type="java.util.List" />
+
+        <variable
+            name="activity"
+            type="androidx.appcompat.app.AppCompatActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/canvascore_background"
+        app:layout_behavior="@string/ui_appbar_scrolling_view_behavior">
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/canvascore_margin_24"
+            android:layout_marginTop="@dimen/canvascore_margin_36"
+            android:accessibilityHeading="true"
+            android:fontFamily="@font/canvascore_scotia_bold"
+            android:text="@string/new_features_title"
+            android:textColor="@color/canvascore_brand_black"
+            android:textSize="26sp"
+            app:canvascore_fontType="headline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_new_features"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/canvascore_margin_24"
+            android:layout_marginTop="@dimen/canvascore_margin_24"
+            android:layout_marginEnd="@dimen/canvascore_margin_24"
+            android:layout_marginBottom="@dimen/canvascore_margin_24"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:data="@{items}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            app:layout_constraintBottom_toTopOf="@+id/btn_accept" />
+
+
+        <com.scotiabank.canvascore.buttons.CanvasButton
+            android:id="@+id/btn_accept"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/canvascore_button_height"
+            android:layout_marginStart="@dimen/canvascore_margin_24"
+            android:layout_marginEnd="@dimen/canvascore_margin_24"
+            android:layout_marginBottom="@dimen/canvascore_margin_24"
+            android:onClick="@{(view)->activity.finish()}"
+            android:text="@string/default_finish_text"
+            android:textAppearance="@style/canvascore_style_text_button"
+            app:canvascore_buttonType="primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

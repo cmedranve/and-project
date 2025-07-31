@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/CanvasMaterial3Theme"
+    android:id="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/canvascore_background"
+    android:outlineProvider="none"
+    app:liftOnScroll="false">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/canvascore_sizing_48"
+        android:visibility="gone"
+        style="@style/SearchBarMaterial"
+        tools:hint="@string/canvascore_button_hint"
+        app:navigationIcon="@drawable/ic_search_black_18"
+        app:elevation="0dp"/>
+
+</com.google.android.material.appbar.AppBarLayout>

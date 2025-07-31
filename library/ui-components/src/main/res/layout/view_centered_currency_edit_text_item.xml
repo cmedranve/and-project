@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <pe.com.scotiabank.blpm.android.ui.currencyedittext.CanvasCenteredCurrencyEditText
+        android:id="@+id/cccet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:canvascore_hintText="@tools:sample/cities"
+        tools:canvascore_isEnabled="true"
+        tools:canvascore_isClearEnabled="false"
+        tools:canvascore_lines="1"
+        tools:canvascore_inputType="text" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

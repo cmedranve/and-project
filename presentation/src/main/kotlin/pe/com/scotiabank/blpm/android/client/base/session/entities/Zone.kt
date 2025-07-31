@@ -1,0 +1,35 @@
+package pe.com.scotiabank.blpm.android.client.base.session.entities
+
+enum class Zone(val id: String, val displayText: String) {
+
+    ABANCAY_ANDAHUAYLAS(id = "054", displayText = "ABANCAY-ANDAHUAYLAS"),
+    AMAZONAS(id = "030", displayText = "AMAZONAS"),
+    AREQUIPA(id = "050", displayText = "AREQUIPA"),
+    AYACUCHO(id = "019", displayText = "AYACUCHO"),
+    CAJAMARCA(id = "006", displayText = "CAJAMARCA"),
+    CAMANA(id = "058", displayText = "CAMANA"),
+    CERRO_DE_PASCO(id = "020", displayText = "CERRO DE PASCO"),
+    CHICLAYO(id = "005", displayText = "CHICLAYO"),
+    CHIMBOTE(id = "013", displayText = "CHIMBOTE"),
+    CUSCO(id = "053", displayText = "CUSCO"),
+    HUACHO(id = "004", displayText = "HUACHO"),
+    HUANCAVELICA(id = "018", displayText = "HUANCAVELICA"),
+    HUANCAYO(id = "012", displayText = "HUANCAYO"),
+    HUANUCO(id = "014", displayText = "HUANUCO"),
+    HUARAZ(id = "009", displayText = "HUARAZ"),
+    ICA(id = "003", displayText = "ICA"),
+    IQUITOS(id = "001", displayText = "IQUITOS"),
+    LIMA(id = "000", displayText = "LIMA"),
+    MOLLENDO(id = "051", displayText = "MOLLENDO"),
+    MOQUEGUA(id = "055", displayText = "MOQUEGUA"),
+    PACASMAYO(id = "015", displayText = "PACASMAYO"),
+    PIURA(id = "007", displayText = "PIURA"),
+    PUCALLPA(id = "011", displayText = "PUCALLPA"),
+    PUERTO_MALDONADO(id = "057", displayText = "PUERTO MALDONADO"),
+    PUNO_JULIACA(id = "052", displayText = "PUNO-JULIACA"),
+    TACNA(id = "056", displayText = "TACNA"),
+    TARAPOTO(id = "016", displayText = "TARAPOTO"),
+    TARMA(id = "010", displayText = "TARMA"),
+    TRUJILLO(id = "008", displayText = "TRUJILLO"),
+    TUMBES(id = "002", displayText = "TUMBES")
+}

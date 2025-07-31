@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/canvas_cc_radius"
+        app:cardElevation="@dimen/canvas_cc_elevation"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ll_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_scotia_logo"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_cc_isotype"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/l_bounded"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:paddingStart="@dimen/canvascore_margin_16"
+                android:paddingTop="@dimen/canvascore_margin_16"
+                android:paddingEnd="@dimen/canvascore_margin_16"
+                android:paddingBottom="@dimen/canvascore_margin_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_bank_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/canvascore_margin_2"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_cc_scotiabank_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/l_card_description" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/l_card_description"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintStart_toEndOf="@+id/iv_bank_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/l_card_number"
+                    app:layout_constraintVertical_chainStyle="spread_inside">
+
+                    <com.scotiabank.canvascore.views.CanvasTextView
+                        android:id="@+id/tv_card_description"
+                        style="@style/canvascore_style_caption"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:textColor="@color/canvascore_brand_white"
+                        android:lineSpacingMultiplier="1.21"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_menu"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:text="@string/card_scotiabank" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_menu"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_menu"
+                        app:tint="@color/canvascore_brand_black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/l_card_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/canvascore_margin_8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/l_card_description"
+                    app:layout_constraintBottom_toTopOf="@id/l_card_holder">
+
+                    <com.scotiabank.canvascore.views.CanvasTextView
+                        android:id="@+id/tv_card_number"
+                        style="@style/canvascore_style_body2"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/canvascore_brand_white"
+                        android:letterSpacing="0.13"
+                        android:lineSpacingMultiplier="1.56"
+                        android:shadowColor="#33000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_next"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:text="@string/default_card_number" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_next"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/shape_cc_circle_plumb"
+                        android:scaleType="centerInside"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_cc_next_right_white"
+                        app:layout_constraintStart_toEndOf="@id/tv_card_number"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/l_card_holder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/l_card_number"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/l_holder_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="60dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_card_logo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <com.scotiabank.canvascore.views.CanvasTextView
+                            android:id="@+id/tv_hold_name"
+                            style="@style/canvascore_style_caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/canvascore_brand_white"
+                            android:lineSpacingMultiplier="1.21"
+                            android:visibility="gone"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tv_label"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            tools:text="@string/card_scotiabank" />
+
+                        <com.scotiabank.canvascore.views.CanvasTextView
+                            android:id="@+id/tv_label"
+                            style="@style/canvascore_style_legal_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_cc_label"
+                            android:textColor="@color/canvascore_brand_white"
+                            android:lineSpacingMultiplier="2"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            app:layout_constraintStart_toEndOf="@id/tv_hold_name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_card_logo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cc_visa_grey"
+                        app:layout_constraintStart_toEndOf="@id/l_holder_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

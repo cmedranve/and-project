@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_currency"
+            style="@style/canvascore_style_body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/canvascore_margin_6"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/et_input"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_input" />
+
+        <com.scotiabank.canvascore.inputs.EditTextHelper
+            android:id="@+id/et_input"
+            style="@style/canvascore_style_text_field_placeholder_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:imeOptions="actionGo"
+            android:inputType="textNoSuggestions"
+            android:saveEnabled="false"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/canvascore_margin_34"
+            android:paddingBottom="@dimen/canvascore_margin_18"
+            android:textColor="@color/canvascore_edittext_label"
+            android:textColorHint="@color/canvascore_edittext_hint"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toEndOf="@id/tv_currency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/CanvasCoreEditText" />
+
+        <com.scotiabank.canvascore.views.Divider
+            android:id="@+id/v_input_underline"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/canvascore_height_1"
+            android:background="@color/canvascore_edittext_label"
+            android:layout_marginTop="-6dp"
+            android:paddingVertical="@dimen/canvascore_margin_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_input" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>

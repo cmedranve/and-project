@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
+        android:theme="@style/CanvasMaterialComponentsCheckableCardTheme"
+        app:cardBackgroundColor="@color/checkable_card_background_color"
+        app:cardForegroundColor="@android:color/transparent"
+        app:strokeColor="@color/checkable_card_stroke_color"
+        app:strokeWidth="@dimen/canvascore_card_view_border_width"
+        app:cardElevation="@dimen/canvascore_card_flat_elevation"
+        app:cardCornerRadius="@dimen/canvascore_card_view_corner_radius"
+        app:checkedIconSize="@dimen/canvascore_margin_0"
+        app:checkedIconMargin="@dimen/canvascore_margin_0"
+        app:rippleColor="@color/canvascore_quick_action_card_ripple">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_ccb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_constraintVertical_bias="0.0">
+
+                <com.scotiabank.canvascore.selectors.CanvasCheckBox
+                    android:id="@+id/ccb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checkable="false"
+                    android:theme="@style/MyAppCompatTheme" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <pe.com.scotiabank.blpm.android.ui.list.items.recycler.NestedRecyclerView
+                android:id="@+id/rv_side_items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ll_ccb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="2" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="ll_ccb,rv_side_items" />
+
+            <pe.com.scotiabank.blpm.android.ui.list.items.recycler.NestedRecyclerView
+                android:id="@+id/rv_bottom_items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier"
+                tools:itemCount="2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

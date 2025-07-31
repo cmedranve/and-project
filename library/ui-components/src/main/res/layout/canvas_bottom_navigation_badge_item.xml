@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/tv_badge"
+        android:layout_width="@dimen/canvascore_padding_15"
+        android:layout_height="@dimen/canvascore_padding_15"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/canvascore_margin_6"
+        android:layout_marginBottom="@dimen/canvascore_margin_8"
+        android:background="@drawable/shape_notification"
+        android:gravity="center"
+        android:textAppearance="@style/canvascore_style_legal_bold"
+        android:textColor="@color/canvascore_brand_white"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.200000000"
+        tools:visibility="visible" />
+
+    <com.scotiabank.canvascore.views.CanvasTextView
+        android:id="@+id/tv_small_badge"
+        android:layout_width="@dimen/canvascore_margin_8"
+        android:layout_height="@dimen/canvascore_margin_8"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/canvascore_margin_6"
+        android:background="@drawable/shape_notification"
+        android:gravity="center"
+        android:textAppearance="@style/canvascore_style_legal_bold"
+        android:textColor="@color/canvascore_brand_white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.200000000"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/v_simple_badge"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:background="@drawable/shape_simple_notification"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_badge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_badge"
+        app:layout_constraintTop_toTopOf="@+id/tv_badge"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

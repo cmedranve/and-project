@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
+        android:theme="@style/CanvasMaterialComponentsCheckableCardTheme"
+        app:cardBackgroundColor="@color/checkable_card_background_color"
+        app:cardForegroundColor="@android:color/transparent"
+        app:strokeColor="@color/checkable_card_stroke_color"
+        app:strokeWidth="@dimen/canvascore_card_view_border_width"
+        app:cardElevation="@dimen/canvascore_card_flat_elevation"
+        app:cardCornerRadius="@dimen/canvascore_card_view_corner_radius"
+        app:checkedIconSize="@dimen/canvascore_margin_0"
+        app:checkedIconMargin="@dimen/canvascore_margin_0"
+        app:rippleColor="@color/canvascore_quick_action_card_ripple">
+
+        <pe.com.scotiabank.blpm.android.ui.list.items.recycler.NestedRecyclerView
+            android:id="@+id/rv_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

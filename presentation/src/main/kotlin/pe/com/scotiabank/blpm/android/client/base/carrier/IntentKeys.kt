@@ -1,0 +1,26 @@
+package pe.com.scotiabank.blpm.android.client.base.carrier
+
+@JvmField
+val INTENT_KEY_OF_BOOLEAN_ID_NAMES: String = "BOOLEAN_ID_NAMES"
+@JvmField
+val INTENT_KEY_OF_BOOLEAN_VALUES: String = "BOOLEAN_VALUES"
+
+@JvmField
+val INTENT_KEY_OF_INT_ID_NAMES: String = "INT_ID_NAMES"
+@JvmField
+val INTENT_KEY_OF_INT_VALUES: String = "INT_VALUES"
+
+@JvmField
+val INTENT_KEY_OF_LONG_ID_NAMES: String = "LONG_ID_NAMES"
+@JvmField
+val INTENT_KEY_OF_LONG_VALUES: String = "LONG_VALUES"
+
+@JvmField
+val INTENT_KEY_OF_STRING_ID_NAMES: String = "STRING_ID_NAMES"
+@JvmField
+val INTENT_KEY_OF_STRING_VALUES: String = "STRING_VALUES"
+
+@JvmField
+val INTENT_KEY_OF_PARCELABLE_ID_NAMES: String = "PARCELABLE_ID_NAMES"
+@JvmField
+val INTENT_KEY_OF_PARCELABLE_VALUES: String = "PARCELABLE_VALUES"

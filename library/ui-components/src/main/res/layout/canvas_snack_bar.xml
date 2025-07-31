@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/shape_canvas_snackbar_green"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/canvascore_margin_24"
+        android:paddingTop="@dimen/canvascore_margin_16"
+        android:paddingEnd="@dimen/canvascore_margin_24"
+        android:paddingBottom="@dimen/canvascore_margin_16">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_nav_check_light_green"
+            app:tintMode="src_in" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:lineSpacingMultiplier="1.29"
+            android:textAppearance="@style/canvascore_style_caption"
+            android:textColor="@color/snackbar_green_text" />
+
+    </LinearLayout>
+
+</LinearLayout>

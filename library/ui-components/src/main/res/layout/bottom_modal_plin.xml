@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_modal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="@dimen/canvascore_margin_24"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical_left"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/il_p2p_logo_42" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_title"
+            style="@style/canvascore_style_headline_extra_small_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/canvascore_margin_24"
+            android:lineSpacingMultiplier="1.25"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical_left"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical_right"
+            app:layout_constraintTop_toBottomOf="@+id/ivIcon"
+            tools:text="@string/l2p_title_transfer_modal" />
+
+        <com.scotiabank.canvascore.views.CanvasTextView
+            android:id="@+id/tv_message"
+            style="@style/canvascore_style_body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/canvascore_margin_12"
+            android:lineSpacingMultiplier="1.25"
+            app:layout_constraintStart_toStartOf="@+id/gl_vertical_left"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical_right"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="@string/l2p_message_transfer_modal" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="24dp" />
+
+        <com.scotiabank.canvascore.buttons.TextButton
+            android:id="@+id/btnDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/canvascore_margin_20"
+            app:layout_constraintEnd_toStartOf="@+id/btnAction"
+            app:layout_constraintTop_toTopOf="@+id/btnAction"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAction"
+            tools:text="@string/simple_not_now" />
+
+        <com.scotiabank.canvascore.buttons.PillButton
+            android:id="@+id/btnAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/canvascore_margin_32"
+            android:layout_marginBottom="@dimen/canvascore_margin_24"
+            android:textSize="@dimen/canvascore_font_16"
+            app:canvascore_pillButtonType="novaPill"
+            app:layout_constraintEnd_toStartOf="@+id/gl_vertical_right"
+            app:layout_constraintTop_toBottomOf="@+id/tv_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="@string/im_interested" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
