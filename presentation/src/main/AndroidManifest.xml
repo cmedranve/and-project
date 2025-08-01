@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Always include this permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Prevent non-system overlay windows from being drawn on top of this window. -->
+    <uses-permission android:name="android.permission.HIDE_OVERLAY_WINDOWS" />
+
+    <queries>
+        <package android:name="com.google.android.apps.walletnfcrel" />
+    </queries>
+
+    <application
+        android:name=".app.JoyApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${app_name}${flavor_suffix}"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme"
+        android:usesCleartextTraffic="${active_cleartextTraffic}"
+        tools:ignore="GoogleAppIndexingWarning"
+        android:installLocation="internalOnly"
+        tools:replace="android:label,android:allowBackup">
+
+        <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="false" />
+
+        <activity
+            android:name=".host.shared.HostActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.App.Starting">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".pfm.goal.explain.detail.DetailExplainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:exported="false" />
+
+        <activity
+            android:name=".pfm.goal.onboarding.OnboardingGoalActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:exported="false" />
+
+        <activity
+            android:name=".pfm.goal.create.goalintroduction.IntroductionGoalActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:exported="false" />
+
+        <activity
+            android:name=".pfm.goal.detail.GoalDetailHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.detail.moreaction.MoreActionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".savingsaccount.dailydraw.details.DailyDrawDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".savingsaccount.departmentlottery.information.DepartmentLotteryInformationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"/>
+
+        <activity
+            android:name=".savingsaccount.departmentlottery.details.DepartmentLotteryDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".savingsaccount.dailydraw.information.DailyDrawInformationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"/>
+
+        <activity
+            android:name=".savingsaccount.maintenance.MaintenanceSavingsAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"/>
+
+        <activity
+            android:name=".pfm.goal.withdraw.conclusion.GoalWithdrawConclusionActivity"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".pfm.goal.withdraw.confirm.ConfirmWithdrawGoalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".pfm.goal.withdraw.withdrawmoney.WithdrawMoneyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".pfm.goal.withdraw.withoutfunds.WithoutFundsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/gmaps" />
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="true" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+
+        <provider
+            android:name=".base.contentprovider.AppFileProvider"
+            android:authorities="${filesAuthority}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- ressource file to create -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service
+            android:name=".messaging.JoyFirebaseMessagingService"
+            android:directBootAware="true"
+            android:exported="false">
+
+            <intent-filter>
+
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+
+            </intent-filter>
+
+        </service>
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_white_isotype" />
+
+        <activity
+            android:name=".entrypoint.DynamicLinkActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Transparent">
+
+            <intent-filter android:autoVerify="true">
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
+                <data android:host="scotiabankpe0dev.page.link" />
+                <data android:host="scotiabankpe.page.link" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".entrypoint.InternalLinkActivity"
+            android:exported="false"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Transparent" />
+
+        <activity
+            android:name=".entrypoint.NotificationLinkActivity"
+            android:exported="false"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Transparent" />
+
+        <activity
+            android:name=".shield.ShieldActivity"
+            android:configChanges="density|fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".newdashboard.NewDashboardActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".newdashboard.businessdashboard.BusinessDashboardActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".transfer.host.TransferHubHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".payment.PaymentHubHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".newpayment.legacybridge.PaymentHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".nosession.newenrollment.digitaltoken.legacy.DigitalTokenHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".payment.creditcard.step1.CreditCardPaymentStep1Activity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".payment.creditcard.step2.CreditCardPaymentStep2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".payment.creditcard.step3.CreditCardConfirmationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_confirmation"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".payment.creditcard.othercreditcard.CreditCardPaymentOtherActivity"
+            android:exported="false"
+            android:label="@string/cc_payment_other_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".newdashboard.NewDashboardActivity" />
+
+        </activity>
+
+        <activity
+            android:name=".products.detailproducts.moreinformation.MoreInformationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".products.detailproducts.schedule.ProductScheduleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".payment.loan.LoanConfirmationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_confirmation"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".payment.loan.list.LoanListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".payment.institutions.search.company.bills.BillsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".payment.institutions.search.company.confirmvalidation.ConfirmValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".base.receipt.ReceiptActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.profile.verification.VerifyChannelActivity"
+            android:exported="false"
+            android:label="@string/menu_profile"
+            android:parentActivityName=".profilesettings.profile.authentication.AuthenticationChannelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.profile.verification.ConfirmVerificationChannelActivity"
+            android:exported="false"
+            android:label="@string/menu_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.profile.authentication.AuthenticationChannelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.digitalkey.DigitalKeyActivity"
+            android:exported="false"
+            android:parentActivityName=".profilesettings.profile.authentication.AuthenticationChannelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".base.security.DigitalKeyValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.profile.editchannel.EditChannelActivity"
+            android:exported="false"
+            android:parentActivityName=".profilesettings.profile.authentication.AuthenticationChannelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.instacash.error.InstacashErrorActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.instacash.payment.prepaid.options.InstaCashPrepaidOptionsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.instacash.payment.confirmation.InstaCashPaymentConfirmationActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.instacash.payment.creditcard.InstaCashCreditCardPaymentActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".newwebview.NewWebViewActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".features.dashboard.products.onboarding.OnboardingProductActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.detailproducts.NewProductDetailActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.create.goalintroduction.GoalIntroductionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pfm.goal.create.goalsimulation.GoalSimulationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pfm.goal.create.goalconclusion.GoalConclusionActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.create.confirmation.ConfirmCreateGoalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".profilesettings.profile.myprofile.UpdateMyProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".cardlesswithdrawal.CardlessWithdrawalExplanationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".cardlesswithdrawal.confirmation.CardlessWithdrawalConfirmationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".cardlesswithdrawal.finished.CardlessWithdrawalFinishedActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.addmoney.validation.AddMoneyToMyGoalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".cardlesswithdrawal.form.CardlessWithdrawalFormActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".cardlesswithdrawal.movements.CardlessWithdrawalMovementsActivity"
+            android:exported="false"
+            android:parentActivityName=".cardlesswithdrawal.CardlessWithdrawalExplanationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pfm.goal.addmoney.confirmation.ConfirmationAddMoneyToMyGoalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".cardlesswithdrawal.detail.CardlessWithdrawalDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.addmoney.voucher.VoucherAddMoneyToMyGoalActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.edit.confirm.EditGoalActivity"
+            android:exported="false"
+            android:parentActivityName=".products.detailproducts.NewProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pfm.goal.display.GoalDisplayActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".cardsettings.settings.CardSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".cardsettings.additional.CardSettingsAdditionalCardWarningActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.create.confirmation.ContractDocumentsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.cancel.introduction.GoalCancelActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".cardsettings.travel.CardSettingsTravelDestinationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".cardsettings.travel.CardSettingsTravelChooseDateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.cancel.confirmation.GoalCancelConfirmActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pfm.goal.cancel.conclusion.GoalCancelConclusionActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.cancel.voucher.GoalCancelVoucherActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".base.InformationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.edit.confirm.EditPiggyGoalActivity"
+            android:exported="false"
+            android:parentActivityName=".products.detailproducts.NewProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".products.dashboard.edit.EditDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".newdashboard.products.AllProductsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".restrictedprofile.alert.RestrictedProfileAlertActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".restrictedprofile.alert.OpenMarketAlertActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".eraser.confirmationbynotification.EraserConfirmationNotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.create.introduction.IntroductionToCreateGoalActivity"
+            android:exported="false"
+            android:parentActivityName=".products.detailproducts.NewProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pfm.goal.create.datainput.GoalPiggyDataInputActivity"
+            android:exported="false"
+            android:parentActivityName=".products.detailproducts.NewProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".mapview.MapActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".eraser.conclusion.EraserConclusionActivity"
+            android:exported="false"
+            android:parentActivityName=".products.detailproducts.NewProductDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.addmoney.conclusion.AddMoneyConclusionActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".newdashboard.plin.explanation.ExplanationActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.interoperabilityfullscreen.InteroperabilityFullScreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.P2PActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.pendingpayments.PendingPaymentHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.onboarding.confirmphonenumber.ConfirmPhoneNumberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.onboarding.selectaccount.SelectAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.onboarding.successregister.SuccessRegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.setting.group.SettingGroupActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.setting.bank.BankSettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".p2p.setting.account.AccountSettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".loop2pay.voucher.Loop2PayFinishedVoucherActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".payment.loan.paymentoptions.LoanPayOptionsActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.cancel.introduction.FinishGoalAchievedActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.notifications.NotificationSettingActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.detailproducts.accountdocuments.statements.AccountStatementsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pfm.goal.addmoney.payroll.ListOfGoalsActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:theme="@style/Theme.Transparent" />
+
+        <activity
+            android:name=".loop2pay.information.Loop2PayInformationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".biometric.enrollmentV2.validationV2.BiometricEnrollmentValidationActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".biometric.enrollmentV2.digitalkeybiometricV2.DigitalKeyBiometricValidationActivityV2"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".biometric.enrollmentV2.configurationV2.BiometricConfigurationActivityV2"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".biometric.enrollmentV2.alreadyenrollmentV2.BiometricAlreadyEnrollmentActivityV2"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".qrpayment.enteramount.QRCameraEnterAmountActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.walkthrough.WalkthroughActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".qrpayment.generalaccess.QRGeneralAccessActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".message.superaccount.MessageSuperAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".loop2pay.selectbank.Loop2PaySelectBankSettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".qrpayment.voucher.QRPayFinishedVoucherActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".products.detailproducts.unprocessed.charges.ListUnprocessedChargesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".restrictedprofile.MigrationToFPValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.configuration.MyAccountConfigurationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.security.MyAccountSecurityActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.newchangepassword.ChangePasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.documents.MyAccountDocumentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".profilesettings.helpcenter.MyAccountHelpCenterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".whatsnew.WhatsNewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".messaging.activate.ActivateNotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".messaging.otherdevice.ActivatedOtherDeviceNotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.selectoperation.SelectOperationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.selectinstallment.SelectInstallmentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.selectoperation.info.InstallmentsInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.custominstallment.InstallmentCustomActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.validation.InstallmentValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.confirmation.InstallmentsConfirmationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".installments.voucher.InstallmentVoucherActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".maintenance.MaintenanceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".messaging.disabledso.DisabledNotificationsOsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".biometric.enrollment.EnrollmentBiometricActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".pdf.PdfActivity"
+            android:exported="false"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".foreignexchange.exchangemoney.FxExchangeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".foreignexchange.quotation.FxQuotationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".foreignexchange.receipt.FxReceiptActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".payment.servicesorinstitutions.sunat.SunatPaymentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".base.operation.token.validation.non.NonTokenValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".base.operation.token.validation.businessbanking.BusinessTokenValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".base.operation.token.validation.personalbanking.PersonalTokenValidationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.chuckerteam.chucker.internal.ui.MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.chuckerteam.chucker.internal.ui.transaction.TransactionActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.medallia.digital.mobilesdk.MedalliaFullFormActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.medallia.digital.mobilesdk.MedalliaModalFormActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.facephi.selphi.Widget"
+            android:label="UserControlAndroid"
+            tools:replace="android:label" />
+
+        <activity
+            android:name=".atmcardhub.AtmCardHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".products.detailproducts.accountstatements.AccountStatementActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".profilesettings.profile.NewProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".creditcard.membership.screen.CreditCardMembershipActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity
+            android:name=".cards.walletnotinstalled.GoogleWalletNotInstalledActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+        
+        <activity android:name=".p2p.onboarding.rpexplanation.PlinRPExplanationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme" />
+
+        <activity android:name=".scotiapay.affiliation.ScotiaPayAffiliationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".scotiapay.shared.info.ScotiaPayInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".scotiapay.shared.qr.ScotiaPayQrActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".scotiapay.setting.ScotiaPaySettingHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".rewards.single.SingleErasureHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".rewards.group.RewardsHubHostActivity"
+            android:exported="false"
+            android:parentActivityName=".newdashboard.NewDashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".newqrpayment.QrPaymentHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity android:name=".profilesettings.security.userdeletion.UserDeletionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".limit.LimitHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".cardsettings.CardSettingHubHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".pinreset.PinResetHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".p2p.helpcenter.HelpCenterHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".p2p.sendmoney.views.error.ErrorTimeoutHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyMaterialTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".goal.create.GoalCreateHubHostActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomCalendarTheme"
+            android:exported="false" />
+
+    </application>
+
+    <!-- Required only if your app targets Android 13 or higher. To opt out of the Advertising ID
+        Permission, add a uses-permission element to the manifest after the application element -->
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
+
+</manifest>
